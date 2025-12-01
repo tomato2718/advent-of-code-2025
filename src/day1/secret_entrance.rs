@@ -32,7 +32,7 @@ impl SecretEntrance {
             prev = cur;
         }
 
-        acc as usize
+        acc
     }
 
     fn parse_command(command: &str) -> i32 {
