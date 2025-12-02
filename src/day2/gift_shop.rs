@@ -2,19 +2,17 @@ pub struct GiftShop {}
 
 impl GiftShop {
     pub fn sum_of_id_repeated_twice(ids: &Vec<&str>) -> usize {
-        GiftShop::parse_ids(ids).fold(0, |acc, (start, end)| {
-            acc + (start..=end)
-                .filter(GiftShop::repeated_twice)
-                .sum::<usize>()
-        })
+        GiftShop::parse_ids(ids)
+            .map(|(start, end)| (start..=end).filter(GiftShop::repeated_twice))
+            .flatten()
+            .sum()
     }
 
     pub fn sum_of_id_repeated_more_than_twice(ids: &Vec<&str>) -> usize {
-        GiftShop::parse_ids(ids).fold(0, |acc, (start, end)| {
-            acc + (start..=end)
-                .filter(GiftShop::repeated_more_than_twice)
-                .sum::<usize>()
-        })
+        GiftShop::parse_ids(ids)
+            .map(|(start, end)| (start..=end).filter(GiftShop::repeated_more_than_twice))
+            .flatten()
+            .sum()
     }
 
     fn parse_ids(ids: &Vec<&str>) -> impl Iterator<Item = (usize, usize)> {
