@@ -7,4 +7,8 @@ pub fn run(raw_input: String) {
         "  Accessible points: {}",
         PrintingDepartment::count_accessible_points(&input)
     );
+    println!(
+        "  Accessible points with removal: {}",
+        PrintingDepartment::count_accessible_points_with_removal(&input)
+    );
 }
