@@ -1,4 +1,4 @@
-use advent_of_code_2025::{day1, day2, day3};
+use advent_of_code_2025::{day1, day2, day3, day4};
 use std::fs::read_to_string;
 
 fn main() {
@@ -6,6 +6,7 @@ fn main() {
         ("day1", day1::run as fn(String)),
         ("day2", day2::run),
         ("day3", day3::run),
+        ("day4", day4::run),
     ])
     .into_iter()
     .for_each(|(name, runnable)| runnable(read_file(name)));
