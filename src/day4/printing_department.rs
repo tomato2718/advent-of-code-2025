@@ -8,17 +8,18 @@ impl PrintingDepartment {
         (0..department.len())
             .flat_map(|r| (0..department[0].len()).map(move |c| (r, c)))
             .filter(|(r, c)| department[*r][*c] == '@')
-            .fold(0, |acc, (r, c)| {
-                let adjacent_rolls = (r.saturating_sub(1)..=(r + 1).min(department.len() - 1))
+            .map(|(r, c)| {
+                (r.saturating_sub(1)..=(r + 1).min(department.len() - 1))
                     .flat_map(|r| {
                         (c.saturating_sub(1)..=(c + 1).min(department[0].len() - 1))
                             .map(move |c| (r, c))
                     })
                     .filter(|(r, c)| department[*r][*c] == '@')
-                    .count();
-
-                if adjacent_rolls <= 4 { acc + 1 } else { acc }
+                    .count()
+                    - 1
             })
+            .filter(|adjacent_rolls| adjacent_rolls < &4)
+            .count()
     }
 }
 
