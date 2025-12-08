@@ -8,4 +8,8 @@ pub fn run(raw_input: String) {
         "  Times will laser split: {}",
         Laboratories::times_of_splits(&input)
     );
+    println!(
+        "  Possible timelines: {}",
+        Laboratories::possible_timelines(&input)
+    );
 }
