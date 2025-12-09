@@ -14,4 +14,8 @@ pub fn run(raw_input: String) {
 
     println!("Day9:");
     println!("  Largest area: {}", MovieTheater::largest_area(&input));
+    println!(
+        "  Largest inner area: {}",
+        MovieTheater::largest_inner_area(&input)
+    );
 }

@@ -12,6 +12,10 @@ impl MovieTheater {
     fn area(a: (usize, usize), b: (usize, usize)) -> usize {
         (a.0.abs_diff(b.0) + 1) * (a.1.abs_diff(b.1) + 1)
     }
+
+    pub fn largest_inner_area(red_tiles: &Vec<(usize, usize)>) -> usize {
+        0
+    }
 }
 
 #[cfg(test)]
