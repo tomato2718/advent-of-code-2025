@@ -18,4 +18,8 @@ pub fn run(raw_input: String) {
         "  Pruduct of three largest circuits: {}",
         PlayGround::largest_circuits(&input, 1000)
     );
+    println!(
+        "  Pruduct of x-coord of last 2 junction boxes: {}",
+        PlayGround::last_junction_boxes(&input)
+    );
 }
