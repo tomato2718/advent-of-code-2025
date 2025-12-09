@@ -13,7 +13,7 @@ pub fn run(raw_input: String) {
         })
         .collect::<Vec<(usize, usize, usize)>>();
 
-    println!("Day6:");
+    println!("Day8:");
     println!(
         "  Pruduct of three largest circuits: {}",
         PlayGround::largest_circuits(&input, 1000)
