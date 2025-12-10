@@ -52,9 +52,9 @@ impl MovieTheater {
                     .iter()
                     .filter(|c| {
                         c.0 > coord.0
-                            && c.0 < red_tiles[249].0
+                            && c.0 < red_tiles[248].0
                             && c.1 < coord.1
-                            && c.1 > red_tiles[249].1
+                            && c.1 > red_tiles[248].1
                     })
                     .count()
                     == 0
