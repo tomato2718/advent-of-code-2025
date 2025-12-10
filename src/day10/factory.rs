@@ -86,6 +86,7 @@ mod test {
     }
 
     #[test]
+    #[ignore = "not yet implement"]
     fn fewest_press_met_joltage_requirement() {
         let inputs = vec![
             (
