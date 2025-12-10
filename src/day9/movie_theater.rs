@@ -30,8 +30,8 @@ impl MovieTheater {
         );
         let upper_max = upper_tiles
             .iter()
-            .map(|coord| {
-                if upper_tiles
+            .filter(|coord| {
+                upper_tiles
                     .iter()
                     .filter(|c| {
                         c.0 > coord.0
@@ -40,19 +40,15 @@ impl MovieTheater {
                             && c.1 < red_tiles[249].1
                     })
                     .count()
-                    > 0
-                {
-                    0
-                } else {
-                    MovieTheater::area(red_tiles[249], *coord)
-                }
+                    == 0
             })
+            .map(|coord| MovieTheater::area(red_tiles[249], *coord))
             .max()
             .unwrap();
         let bottom_max = bottom_tiles
             .iter()
-            .map(|coord| {
-                if bottom_tiles
+            .filter(|coord| {
+                bottom_tiles
                     .iter()
                     .filter(|c| {
                         c.0 > coord.0
@@ -61,13 +57,9 @@ impl MovieTheater {
                             && c.1 > red_tiles[249].1
                     })
                     .count()
-                    > 0
-                {
-                    0
-                } else {
-                    MovieTheater::area(red_tiles[248], *coord)
-                }
+                    == 0
             })
+            .map(|coord| MovieTheater::area(red_tiles[248], *coord))
             .max()
             .unwrap();
 
