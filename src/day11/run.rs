@@ -1,5 +1,6 @@
 use super::reactor::Reactor;
 use std::collections::HashMap;
+use std::time::Instant;
 
 pub fn run(raw_input: String) {
     let input: HashMap<&str, Vec<&str>> = raw_input
@@ -11,9 +12,16 @@ pub fn run(raw_input: String) {
         })
         .collect();
     println!("Day11:");
-    println!("  Different paths: {}", Reactor::different_path(&input));
+    let i = Instant::now();
     println!(
-        "  Different paths from svr: {}",
-        Reactor::different_path_from_svr(&input)
+        "  Different paths: {}, Time spent: {}µs",
+        Reactor::different_path(&input),
+        i.elapsed().as_micros()
+    );
+    let i = Instant::now();
+    println!(
+        "  Different paths from svr: {}, Time spent: {}µs",
+        Reactor::different_path_from_svr(&input),
+        i.elapsed().as_micros()
     );
 }

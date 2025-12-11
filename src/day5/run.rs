@@ -1,4 +1,5 @@
 use super::cafeteria::Cafeteria;
+use std::time::Instant;
 
 pub fn run(raw_input: String) {
     let mut input = raw_input.split("\n\n");
@@ -14,12 +15,16 @@ pub fn run(raw_input: String) {
         .map(|id| id.parse().expect("Id should be digits"))
         .collect();
     println!("Day5:");
+    let i = Instant::now();
     println!(
-        "  Fresh ingredients counts: {}",
-        Cafeteria::count_fresh_ingredients(&fresh_ranges, &available_ids)
+        "  Fresh ingredients counts: {}, Time spent: {}µs",
+        Cafeteria::count_fresh_ingredients(&fresh_ranges, &available_ids),
+        i.elapsed().as_micros()
     );
+    let i = Instant::now();
     println!(
-        "  All ingredients counts: {}",
-        Cafeteria::count_all_ingredients(&fresh_ranges)
+        "  All ingredients counts: {}, Time spent: {}µs",
+        Cafeteria::count_all_ingredients(&fresh_ranges),
+        i.elapsed().as_micros()
     );
 }

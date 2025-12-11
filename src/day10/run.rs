@@ -1,4 +1,5 @@
 use super::factory::Factory;
+use std::time::Instant;
 
 pub fn run(raw_input: String) {
     let input: Vec<(Vec<bool>, Vec<Vec<usize>>, Vec<usize>)> = raw_input
@@ -40,5 +41,10 @@ pub fn run(raw_input: String) {
         })
         .collect();
     println!("Day10:");
-    println!("  Fewest press: {}", Factory::fewest_press(&input));
+    let i = Instant::now();
+    println!(
+        "  Fewest press: {}, Time spent: {}µs",
+        Factory::fewest_press(&input),
+        i.elapsed().as_micros()
+    );
 }
