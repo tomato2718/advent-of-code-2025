@@ -12,4 +12,8 @@ pub fn run(raw_input: String) {
         .collect();
     println!("Day11:");
     println!("  Different paths: {}", Reactor::different_path(&input));
+    println!(
+        "  Different paths from svr: {}",
+        Reactor::different_path_from_svr(&input)
+    );
 }
