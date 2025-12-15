@@ -23,17 +23,11 @@ pub fn run(raw_input: String) {
             )
         })
         .collect();
-    println!("Day11:");
+    println!("Day12:");
     let i = Instant::now();
     println!(
         "  Regions can fit presents: {}, Time spent: {}µs",
         ChristmasTreeFarm::regions_can_fit_presents(&input),
         i.elapsed().as_micros()
     );
-    // let i = Instant::now();
-    // println!(
-    //     "  Different paths from svr: {}, Time spent: {}µs",
-    //     Reactor::different_path_from_svr(&input),
-    //     i.elapsed().as_micros()
-    // );
 }
