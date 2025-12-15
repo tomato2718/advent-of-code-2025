@@ -47,4 +47,9 @@ pub fn run(raw_input: String) {
         Factory::fewest_press(&input),
         i.elapsed().as_micros()
     );
+    println!(
+        "  Fewest press met requirements: {}, Time spent: {}µs",
+        Factory::fewest_press_met_joltage_requirement(&input),
+        i.elapsed().as_micros()
+    );
 }
