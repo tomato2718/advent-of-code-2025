@@ -8,7 +8,7 @@
 
 Run under:
 
-- `MacBook Pro 2023 (Apple M2 Pro)`
+- MacBook Pro 2023 (Apple M2 Pro)
 - Rust 1.91.1
 
 ```plaintext
